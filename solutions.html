@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solutions — Synexis Systems</title>
+  <meta name="description" content="Explore Synexis Systems' enterprise solutions and case studies across manufacturing, finance, and corporate sectors.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="synexis-systems.png">
+  <style>
+    /* ── Filter Bar ─────────────────────────────── */
+    .pf-filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .pf-filter-btn {
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1.5px solid var(--glass-border);
+      color: var(--text-muted);
+      background: transparent;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: var(--font-body);
+    }
+    .pf-filter-btn:hover,
+    .pf-filter-btn.active {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      background: rgba(0,194,255,0.08);
+    }
+
+    /* ── Stats Row ──────────────────────────────── */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-top: 52px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .stat-card:hover {
+      border-color: rgba(0,194,255,0.35);
+      transform: translateY(-4px);
+    }
+    .stat-card .sc-num {
+      font-family: var(--font-head);
+      font-size: 2.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-card .sc-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    @media (max-width: 768px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .stats-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loader">
+    <img src="synexis-systems.png" alt="Synexis Systems" class="loader-logo">
+    <div class="loader-bar"><div class="loader-fill"></div></div>
+  </div>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="page-wrapper">
+
+    <!-- ── Navigation ──────────────────────────────────────── -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"><img src="synexis-systems.png" alt="Synexis Systems Logo"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost">Contact Us</a>
+        <a href="contact.html" class="btn btn-primary">Get a Demo</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="services.html">Services</a><a href="solutions.html">Solutions</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Get a Demo</a>
+    </div>
+
+
+    <!-- ── Page Hero ───────────────────────────────────────── -->
+    <div class="page-hero">
+      <div class="ph-glow"></div>
+      <div class="container">
+        <div class="page-hero-content reveal">
+          <span class="section-label">Portfolio</span>
+          <h1>Solutions That <span style="background:linear-gradient(135deg,#007BFF,#00C2FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Deliver Results</span></h1>
+          <p>Real-world deployments across manufacturing, finance, retail, and logistics — each engineered for measurable impact.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ── Impact Stats ─────────────────────────────────────── -->
+    <section style="padding-top:0">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-card reveal reveal-delay-1">
+            <div class="sc-num count-up" data-target="150" data-suffix="+">0+</div>
+            <div class="sc-label">Projects Delivered</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-2">
+            <div class="sc-num count-up" data-target="40" data-suffix="+">0+</div>
+            <div class="sc-label">Industries Served</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-3">
+            <div class="sc-num count-up" data-target="98" data-suffix="%">0%</div>
+            <div class="sc-label">On-time Delivery</div>
+          </div>
+          <div class="stat-card reveal reveal-delay-4">
+            <div class="sc-num count-up" data-target="4" data-suffix="x">0x</div>
+            <div class="sc-label">Average ROI</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Portfolio Grid ───────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:40px;">
+          <div>
+            <span class="section-label">Case Studies</span>
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+          </div>
+          <!-- Filter buttons -->
+          <div class="pf-filter-bar">
+            <button class="pf-filter-btn active" data-filter="all">All</button>
+            <button class="pf-filter-btn" data-filter="erp">ERP</button>
+            <button class="pf-filter-btn" data-filter="ai">AI / ML</button>
+            <button class="pf-filter-btn" data-filter="analytics">Analytics</button>
+            <button class="pf-filter-btn" data-filter="integration">Integration</button>
+          </div>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <!-- Card 1 -->
+          <div class="portfolio-card reveal reveal-delay-1" data-category="erp">
+            <div class="pc-preview">
+              <div class="pc-category-badge">ERP</div>
+              <div class="pc-preview-inner">
+                <div class="pc-mini-bar"><span></span><span></span><span></span></div>
+                <div class="pc-mini-rows">
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pc-content">
+              <h3>Manufacturing ERP — Oracle APEX</h3>
+              <p>Full Oracle APEX ERP deployment for a 500-employee steel manufacturer: production planning, inventory, procurement, and financial accounting unified into a single platform.</p>
+              <div class="pc-meta">
+                <span class="pc-industry">🏭 Heavy Manufacturing</span>
+                <span class="pc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="portfolio-card reveal reveal-delay-2" data-category="ai">
+            <div class="pc-preview">
+              <div class="pc-category-badge">AI / ML</div>
+              <div class="pc-preview-inner">
+                <div class="pc-mini-bar"><span></span><span></span><span></span></div>
+                <div class="pc-mini-rows">
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pc-content">
+              <h3>AI Invoice Automation — Finance</h3>
+              <p>Computer vision + NLP pipeline that processes 10,000+ invoices per day with 97% accuracy — eliminating a 12-person manual processing team's core workload.</p>
+              <div class="pc-meta">
+                <span class="pc-industry">🏦 Financial Services</span>
+                <span class="pc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="portfolio-card reveal reveal-delay-3" data-category="analytics">
+            <div class="pc-preview">
+              <div class="pc-category-badge">Analytics</div>
+              <div class="pc-preview-inner">
+                <div class="pc-mini-bar"><span></span><span></span><span></span></div>
+                <div class="pc-mini-rows">
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pc-content">
+              <h3>Executive BI Dashboard — Retail Chain</h3>
+              <p>Real-time Power BI platform aggregating sales, inventory, and logistics data from 28 branches into a single executive dashboard with drill-down to SKU level.</p>
+              <div class="pc-meta">
+                <span class="pc-industry">🛒 Multi-branch Retail</span>
+                <span class="pc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="portfolio-card reveal reveal-delay-1" data-category="integration">
+            <div class="pc-preview">
+              <div class="pc-category-badge">Integration</div>
+              <div class="pc-preview-inner">
+                <div class="pc-mini-bar"><span></span><span></span><span></span></div>
+                <div class="pc-mini-rows">
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pc-content">
+              <h3>ERP ↔ eCommerce Integration</h3>
+              <p>Bidirectional sync between ERPNext and a Shopify enterprise store — real-time inventory, order fulfilment, and financial reconciliation across 5,000+ SKUs.</p>
+              <div class="pc-meta">
+                <span class="pc-industry">🌐 eCommerce</span>
+                <span class="pc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="portfolio-card reveal reveal-delay-2" data-category="erp">
+            <div class="pc-preview">
+              <div class="pc-category-badge">ERP</div>
+              <div class="pc-preview-inner">
+                <div class="pc-mini-bar"><span></span><span></span><span></span></div>
+                <div class="pc-mini-rows">
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pc-content">
+              <h3>Multi-company ERPNext — Logistics</h3>
+              <p>ERPNext rollout across 3 subsidiary companies in a logistics group — shared chart of accounts, consolidated reporting, and inter-company transaction automation.</p>
+              <div class="pc-meta">
+                <span class="pc-industry">🚛 Logistics & Transport</span>
+                <span class="pc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="portfolio-card reveal reveal-delay-3" data-category="ai">
+            <div class="pc-preview">
+              <div class="pc-category-badge">AI / ML</div>
+              <div class="pc-preview-inner">
+                <div class="pc-mini-bar"><span></span><span></span><span></span></div>
+                <div class="pc-mini-rows">
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                  <div class="pc-mini-row"></div><div class="pc-mini-row"></div>
+                </div>
+              </div>
+            </div>
+            <div class="pc-content">
+              <h3>Demand Forecasting Engine — FMCG</h3>
+              <p>LSTM-based demand prediction model deployed into a manufacturer's ERP — reducing overstock by 34% and preventing stockouts on top 200 SKUs.</p>
+              <div class="pc-meta">
+                <span class="pc-industry">🏪 FMCG / Consumer Goods</span>
+                <span class="pc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Industries ───────────────────────────────────────── -->
+    <section style="background:rgba(5,12,24,0.5);">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-label">Verticals</span>
+          <h2 class="section-title">Industries We <span>Serve</span></h2>
+          <p class="section-sub">Deep domain expertise across the sectors that depend on operational precision.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:52px;">
+          <!-- Industry tiles -->
+          <div style="background:var(--card-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:22px 18px;text-align:center;backdrop-filter:blur(12px);transition:all var(--transition);cursor:default;" class="reveal reveal-delay-1"
+               onmouseenter="this.style.borderColor='rgba(0,194,255,0.4)';this.style.transform='translateY(-4px)'"
+               onmouseleave="this.style.borderColor='var(--glass-border)';this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:10px;">🏭</div>
+            <div style="font-size:0.88rem;font-weight:600;color:#fff;">Manufacturing</div>
+          </div>
+          <div style="background:var(--card-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:22px 18px;text-align:center;backdrop-filter:blur(12px);transition:all var(--transition);cursor:default;" class="reveal reveal-delay-2"
+               onmouseenter="this.style.borderColor='rgba(0,194,255,0.4)';this.style.transform='translateY(-4px)'"
+               onmouseleave="this.style.borderColor='var(--glass-border)';this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:10px;">🏦</div>
+            <div style="font-size:0.88rem;font-weight:600;color:#fff;">Finance & Banking</div>
+          </div>
+          <div style="background:var(--card-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:22px 18px;text-align:center;backdrop-filter:blur(12px);transition:all var(--transition);cursor:default;" class="reveal reveal-delay-3"
+               onmouseenter="this.style.borderColor='rgba(0,194,255,0.4)';this.style.transform='translateY(-4px)'"
+               onmouseleave="this.style.borderColor='var(--glass-border)';this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:10px;">🛒</div>
+            <div style="font-size:0.88rem;font-weight:600;color:#fff;">Retail & eCommerce</div>
+          </div>
+          <div style="background:var(--card-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:22px 18px;text-align:center;backdrop-filter:blur(12px);transition:all var(--transition);cursor:default;" class="reveal reveal-delay-4"
+               onmouseenter="this.style.borderColor='rgba(0,194,255,0.4)';this.style.transform='translateY(-4px)'"
+               onmouseleave="this.style.borderColor='var(--glass-border)';this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:10px;">🚛</div>
+            <div style="font-size:0.88rem;font-weight:600;color:#fff;">Logistics</div>
+          </div>
+          <div style="background:var(--card-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:22px 18px;text-align:center;backdrop-filter:blur(12px);transition:all var(--transition);cursor:default;" class="reveal reveal-delay-1"
+               onmouseenter="this.style.borderColor='rgba(0,194,255,0.4)';this.style.transform='translateY(-4px)'"
+               onmouseleave="this.style.borderColor='var(--glass-border)';this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:10px;">🏥</div>
+            <div style="font-size:0.88rem;font-weight:600;color:#fff;">Healthcare</div>
+          </div>
+          <div style="background:var(--card-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:22px 18px;text-align:center;backdrop-filter:blur(12px);transition:all var(--transition);cursor:default;" class="reveal reveal-delay-2"
+               onmouseenter="this.style.borderColor='rgba(0,194,255,0.4)';this.style.transform='translateY(-4px)'"
+               onmouseleave="this.style.borderColor='var(--glass-border)';this.style.transform=''">
+            <div style="font-size:2rem;margin-bottom:10px;">⚡</div>
+            <div style="font-size:0.88rem;font-weight:600;color:#fff;">Energy & Utilities</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── CTA ──────────────────────────────────────────────── -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2>Have a <span style="background:linear-gradient(135deg,#007BFF,#00C2FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Project</span> in Mind?</h2>
+          <p>Let's discuss how Synexis can deliver the same calibre of results for your organisation.</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary btn-lg">Start the Conversation</a>
+            <a href="services.html" class="btn btn-ghost btn-lg">Explore Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Footer ───────────────────────────────────────────── -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="synexis-systems.png" alt="Synexis Systems">
+            <p>Engineering intelligent business systems for enterprise clients — ERP, AI automation, analytics, and system integrations.</p>
+            <div class="social-links">
+              <a href="#" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="#" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+              <a href="#" class="social-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></a>
+            </div>
+          </div>
+          <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+          <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html">ERP Solutions</a></li><li><a href="services.html">AI Automation</a></li><li><a href="services.html">Data Analytics</a></li><li><a href="services.html">Integrations</a></li></ul></div>
+          <div class="footer-col">
+            <h5>Contact</h5>
+            <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@synexissystems.com</div>
+            <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.69 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013.61 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 8.69A16 16 0 0015.1 15.9l.96-.95a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 17.92z"/></svg>+92 300 000 0000</div>
+            <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Lahore, Pakistan</div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 <a href="#">Synexis Systems</a>. All rights reserved.</p>
+          <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
